@@ -1,4 +1,8 @@
 import './App.css';
+import PresetEditor from './components/PresetEditor';
+import PresetList from './components/PresetList';
+import VideoPreview from './components/VideoPreview';
+import VideoSourceList from './components/VideoSourceList';
 
 function App() {
   return (
@@ -8,16 +12,16 @@ function App() {
             <header>
               <h1 className="app-section__title">Video sources</h1>
             </header>
-            <div className="app-section__container">
-              Video sources content
+            <div className="app-section__container video-source">
+              <VideoSourceList/>
             </div>
           </section>
           <section className="app-section">
             <header>
               <h1 className="app-section__title">Video preview</h1>
             </header>
-            <div className="app-section__container">
-              <canvas width="640" height="360"></canvas>
+            <div className="app-section__container video-preview">
+              <VideoPreview/>
             </div>
           </section>
       </div>
@@ -27,8 +31,8 @@ function App() {
             <h1 className="app-section__title">Presets</h1>
             <button>Add new preset</button>
           </header>
-          <div className="app-section__container">
-            Presets content
+          <div className="app-section__container preset-list">
+            <PresetList/>
           </div>
         </section>
         <section className="app-section">
@@ -36,7 +40,7 @@ function App() {
             <h1 className="app-section__title">Preset editor</h1>
           </header>
           <div className="app-section__container preset-editor">
-            <textarea className="preset-editor__code" spellCheck="false">fps(30);</textarea>
+            <PresetEditor/>
           </div>
         </section>
       </div>

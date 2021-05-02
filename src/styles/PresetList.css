@@ -1,0 +1,10 @@
+.preset-list div {
+    padding: 8px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,255,0.04);
+}
+
+.preset-list div + div {
+    margin-top: 8px;
+}

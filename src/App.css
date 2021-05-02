@@ -52,12 +52,12 @@ section.app-section {
   background-color: #202060;
 }
 
-.app-section__container {
+/*.app-section__container {
   padding: 8px;
   background-color: #FFFFFF;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0,0,255,0.04);
-}
+}*/
 
 .preset-editor {
   padding: 0;
