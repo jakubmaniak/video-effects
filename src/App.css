@@ -22,7 +22,55 @@ section.app-section {
   min-width: 320px;
   max-width: 640px;
   width: 100vw;
+}
+
+.app-section header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.app-section header h1 {
+  flex-grow: 1;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.app-section header button {
+  height: 28px;
+  padding: 0 20px;
+  background-color: #101030;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px rgba(0,0,255,0.04);
+  color: #FFFFFF;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.app-section header button:hover {
+  background-color: #202060;
+}
+
+.app-section__container {
+  padding: 8px;
   background-color: #FFFFFF;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,255,0.04);
+}
+
+.preset-editor {
+  padding: 0;
+}
+
+.preset-editor__code {
+  display: block;
+  padding: 8px;
+  width: 100%;
+  min-height: 200px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  resize: vertical;
 }
 
 @media screen and (max-width: 656px) {
