@@ -3,3 +3,30 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
 }
+
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  padding-top: 80px;
+}
+
+.app__column {
+  display: flex;
+  flex-direction: column;
+}
+
+section.app-section {
+  margin: 8px;
+  min-width: 320px;
+  max-width: 640px;
+  width: 100vw;
+  background-color: #FFFFFF;
+}
+
+@media screen and (max-width: 656px) {
+  section.app-section {
+    margin: 8px 0;
+  }
+}
