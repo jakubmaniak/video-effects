@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 
 function VideoSource(props) {
     let [selected, setSelected] = useState(false);
-    const [name, setName] = useState(props.name ?? 'Video source');
-    const [source, setSource] = useState(props.source ?? '');
 
     useEffect(() => {
         if (!props.selected === selected) {
@@ -28,8 +26,8 @@ function VideoSource(props) {
 
     return (
         <button className={getItemClassName()} onClick={props.onClick}>
-            <span className="video-source__name">{name}</span>
-            <span className="video-source__address">{sliceSource(source, 40)}</span>
+            <span className="video-source__name">{props.name ?? 'Video source'}</span>
+            <span className="video-source__address">{sliceSource(props.source ?? '', 40)}</span>
         </button>
     );
 }

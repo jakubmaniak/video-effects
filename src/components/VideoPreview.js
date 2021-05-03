@@ -1,19 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
 import '../styles/VideoPreview.css';
 
-function VideoPreview() {
+function VideoPreview(props) {
     let canvasRef = useRef();
-    let [video, setVideo] = useState();
+    let videoRef = useRef();
     let [playing, setPlaying] = useState(true);
     let [muted, setMuted] = useState(true);
 
     useEffect(() => {
-        video = document.createElement('video');
+        let video = document.createElement('video');
         video.muted = true;
         video.src = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
+        video.loop = true;
         video.play();
 
-        setVideo(video);
+        videoRef.current = video;
 
         let ctx = canvasRef.current.getContext('2d');
 
@@ -22,18 +23,23 @@ function VideoPreview() {
         }, 1000 / 24);
     }, []);
 
+    useEffect(() => {
+        videoRef.current.src = props.videoSource?.source;
+        videoRef.current.play();
+    }, [props.videoSource]);
+
     function handlePlayButtonClick() {
         if (playing) {
-            video.pause();
+            videoRef.current.pause();
         }
         else {
-            video.play();
+            videoRef.current.play();
         }
         setPlaying(!playing);
     }
 
     function handleMuteButtonClick() {
-        video.muted = !muted;
+        videoRef.current.muted = !muted;
         setMuted(!muted);
     }
 
