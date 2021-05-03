@@ -1,0 +1,8 @@
+.preset {
+    padding: 12px 14px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,255,0.04);
+    font-size: 13px;
+    font-weight: 500;
+}

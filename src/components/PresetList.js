@@ -1,12 +1,19 @@
 import '../styles/PresetList.css';
+import Preset from './Preset';
 
 function PresetList() {
     return (
-        <>
-            <div>Preset name</div>
-            <div>Preset name</div>
-            <div>Preset name</div>
-        </>
+        <div className="preset__list">
+            <Preset name="No effects"/>
+            <Preset name="Grayscale"/>
+            <Preset/>
+            <Preset/>
+            <Preset/>
+            <Preset/>
+            <Preset/>
+            <Preset/>
+            <Preset/>
+        </div>
     );
 }
 

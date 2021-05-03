@@ -31,7 +31,7 @@ function App() {
             <h1 className="app-section__title">Presets</h1>
             <button>Add new preset</button>
           </header>
-          <div className="preset-list">
+          <div className="presets">
             <PresetList/>
           </div>
         </section>
