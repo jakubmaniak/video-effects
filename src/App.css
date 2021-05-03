@@ -45,11 +45,18 @@ section.app-section {
   color: #FFFFFF;
   font-size: 13px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
 }
 
 .app-section header button:hover {
   background-color: #202060;
+}
+
+.app-section header button[disabled] {
+  background-color: #DADAE0;
+  color: #B0B0B8;
+  opacity: 0.75;
+  cursor: default;
 }
 
 @media screen and (max-width: 656px) {
