@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import PresetList from './PresetList';
 import PresetEditor from './PresetEditor';
 
@@ -18,8 +19,15 @@ function PresetManager() {
     }
 
     useEffect(() => {
-        presets.add({ name: 'No effects', code: 'fps(24);' });
-        presets.add({ name: 'Grayscale' });
+        presets.add({
+            id: uuid(),
+            name: 'No effects',
+            code: 'fps(24);'
+        });
+        presets.add({
+            id: uuid(),
+            name: 'Grayscale'
+        });
         setPresets(new Set(presets));
 
         setSelectedPreset(presets.values().next().value);

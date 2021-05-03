@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import '../styles/VideoSourceList.css';
 import VideoSource from './VideoSource';
 
@@ -8,10 +9,12 @@ function VideoSourceList() {
 
     useEffect(() => {
         videoSources.add({
+            id: uuid(),
             name: 'Big Buck Bunny',
             source: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
         });
         videoSources.add({
+            id: uuid(),
             name: 'Tears of Steel',
             source: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4'
         });
@@ -24,7 +27,7 @@ function VideoSourceList() {
         <div className="video-source__list">{
             [...videoSources.values()].map((videoSource) =>
                 <VideoSource
-                    key={videoSource.name}
+                    key={videoSource.id}
                     selected={selectedVideoSource === videoSource}
                     onClick={() => setSelectedVideoSource(videoSource)}
                     {...videoSource}/>

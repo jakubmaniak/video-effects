@@ -7,7 +7,7 @@ function PresetList(props) {
         <div className="preset__list">{
             [...props.presets].map((preset) =>
                 <Preset
-                    key={preset.name}
+                    key={preset.id}
                     name={preset.name}
                     selected={preset === props.selectedPreset}
                     onClick={() => props.onSelectPreset?.(preset)}

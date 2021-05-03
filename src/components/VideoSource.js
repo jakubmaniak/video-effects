@@ -7,7 +7,7 @@ function VideoSource(props) {
     const [source, setSource] = useState(props.source ?? '');
 
     useEffect(() => {
-        if (!props.selected == selected) {
+        if (!props.selected === selected) {
             setSelected(!!props.selected);
         }
     }, [props.selected]);
