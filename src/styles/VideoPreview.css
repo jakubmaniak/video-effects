@@ -9,6 +9,10 @@
     display: flex;
 }
 
+.video-preview__canvas {
+    border-radius: 4px;
+}
+
 .video-controls {
     padding: 20px;
     display: flex;
