@@ -10,9 +10,7 @@ function VideoPreview(props) {
     useEffect(() => {
         let video = document.createElement('video');
         video.muted = true;
-        video.src = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
         video.loop = true;
-        video.play();
 
         videoRef.current = video;
 
