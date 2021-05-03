@@ -1,11 +1,24 @@
 import '../styles/Preset.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Preset(props) {
     const [name, setName] = useState(props.name ?? 'New preset');
+    const [selected, setSelected] = useState(false);
+
+    useEffect(() => {
+        if (!props.selected == selected) {
+            setSelected(!!props.selected);
+        }
+    }, [props.selected]);
+
+    function getItemClassName() {
+        return 'preset' + (
+            selected ? ' preset--selected' : ''
+        );
+    }
 
     return (
-        <div className="preset">{name}</div>
+        <button className={getItemClassName()} onClick={props.onClick}>{name}</button>
     );
 }
 
