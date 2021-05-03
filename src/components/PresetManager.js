@@ -36,7 +36,7 @@ function PresetManager() {
         let newPreset = {
             id: uuid(),
             name: 'My preset',
-            code: 'fps(24);\n\nfor (let y = 0; y < height; y++) {\n  for (let x = 0; x < width; x++) {\n    \n  }\n}'
+            code: 'fps(24);\n\nfor (let y = 0; y < height; y++) {\n  for (let x = 0; x < width; x++) {\n    let {r, g, b} = get(x, y);\n    set(x, y, {r, g, b});\n    \n  }\n}'
         };
         presets.add(newPreset);
 
