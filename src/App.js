@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="app">
       <div className="app__column">
-          <VideoManager/>
+        <VideoManager/>
       </div>
       <div className="app__column">
         <PresetManager/>
