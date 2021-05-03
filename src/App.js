@@ -12,7 +12,7 @@ function App() {
             <header>
               <h1 className="app-section__title">Video sources</h1>
             </header>
-            <div className="video-source">
+            <div className="video-sources">
               <VideoSourceList/>
             </div>
           </section>

@@ -1,0 +1,20 @@
+.video-source {
+    display: flex;
+    padding: 12px 14px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,255,0.04);
+    font-size: 13px;
+}
+
+.video-source__name {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.video-source__address {
+    color: #C0C0C8;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+}

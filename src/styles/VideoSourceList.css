@@ -3,13 +3,6 @@
     flex-direction: column;
 }
 
-.video-source__list span {
-    padding: 8px;
-    background-color: #FFFFFF;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0,0,255,0.04);
-}
-
-.video-source__list span + span {
+.video-source__list .video-source + .video-source {
     margin-top: 8px;
 }
