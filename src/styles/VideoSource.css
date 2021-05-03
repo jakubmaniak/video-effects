@@ -1,10 +1,33 @@
 .video-source {
     display: flex;
+    position: relative;
     padding: 12px 14px;
     background-color: #FFFFFF;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0,0,255,0.04);
     font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.video-source:hover .video-source__name {
+    color: #202080;
+}
+
+.video-source--selected {
+    background-color: #FAFAFF;
+}
+
+.video-source--selected::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 4px;
+    background-color: #202060;
+    border-radius: 0 4px 4px 0;
 }
 
 .video-source__name {

@@ -1,9 +1,16 @@
 import '../styles/VideoSource.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function VideoSource(props) {
+    let [selected, setSelected] = useState(false);
     const [name, setName] = useState(props.name ?? 'Video source');
     const [source, setSource] = useState(props.source ?? '');
+
+    useEffect(() => {
+        if (!props.selected == selected) {
+            setSelected(!!props.selected);
+        }
+    }, [props.selected]);
 
     function sliceSource(address, maxLength) {
         if (address.length > maxLength) {
@@ -13,11 +20,17 @@ function VideoSource(props) {
         return address;
     }
 
+    function getItemClassName() {
+        return 'video-source' + (
+            selected ? ' video-source--selected' : ''
+        );
+    }
+
     return (
-        <div className="video-source">
+        <button className={getItemClassName()} onClick={props.onClick}>
             <span className="video-source__name">{name}</span>
             <span className="video-source__address">{sliceSource(source, 40)}</span>
-        </div>
+        </button>
     );
 }
 
