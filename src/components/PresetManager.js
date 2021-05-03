@@ -12,6 +12,7 @@ function PresetManager() {
     function setSelectedPreset(preset) {
         _setSelectedPreset(preset);
         setCode(preset.code);
+        setHasChanges(false);
     }
 
     useEffect(() => {
@@ -31,6 +32,18 @@ function PresetManager() {
         setSelectedPreset(presets.values().next().value);
     }, []);
 
+    function addNewPreset() {
+        let newPreset = {
+            id: uuid(),
+            name: 'My preset',
+            code: 'fps(24);\n\nfor (let y = 0; y < height; y++) {\n  for (let x = 0; x < width; x++) {\n    \n  }\n}'
+        };
+        presets.add(newPreset);
+
+        setPresets(new Set(presets));
+        setSelectedPreset(newPreset);
+    }
+
     function saveCodeChanges() {
         selectedPreset.code = code;
         setPresets(new Set(presets));
@@ -41,13 +54,15 @@ function PresetManager() {
         <section className="app-section">
             <header>
                 <h1 className="app-section__title">Presets</h1>
-                <button>Add new preset</button>
+                <button
+                    onClick={addNewPreset}
+                >Add new preset</button>
             </header>
             <div className="presets">
                 <PresetList
                     presets={presets}
                     selectedPreset={selectedPreset}
-                    onSelectPreset={(preset) => { setSelectedPreset(preset); setHasChanges(false); }}
+                    onSelectPreset={setSelectedPreset}
                 />
             </div>
             </section>
