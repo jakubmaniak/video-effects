@@ -12,7 +12,7 @@ function App() {
             <header>
               <h1 className="app-section__title">Video sources</h1>
             </header>
-            <div className="app-section__container video-source">
+            <div className="video-source">
               <VideoSourceList/>
             </div>
           </section>
@@ -20,7 +20,7 @@ function App() {
             <header>
               <h1 className="app-section__title">Video preview</h1>
             </header>
-            <div className="app-section__container video-preview">
+            <div className="video-preview">
               <VideoPreview/>
             </div>
           </section>
@@ -31,7 +31,7 @@ function App() {
             <h1 className="app-section__title">Presets</h1>
             <button>Add new preset</button>
           </header>
-          <div className="app-section__container preset-list">
+          <div className="preset-list">
             <PresetList/>
           </div>
         </section>
@@ -39,7 +39,7 @@ function App() {
           <header>
             <h1 className="app-section__title">Preset editor</h1>
           </header>
-          <div className="app-section__container preset-editor">
+          <div className="preset-editor">
             <PresetEditor/>
           </div>
         </section>
