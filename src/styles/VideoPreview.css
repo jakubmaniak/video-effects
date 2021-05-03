@@ -1,6 +1,54 @@
 .video-preview {
-    padding: 8px;
     background-color: #FFFFFF;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0,0,255,0.04);
+}
+
+.video-preview__container {
+    position: relative;
+    display: flex;
+}
+
+.video-controls {
+    padding: 20px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.video-controls button {
+    height: 40px;
+    width: 40px;
+    background-color: #101030;
+    background-size: 24px 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.video-controls button:hover {
+    background-color: #202060;
+}
+
+.video-control--play {
+    background-image: url('../icons/play.svg');
+}
+
+.video-control--pause {
+    background-image: url('../icons/pause.svg');
+}
+
+.video-control--volume-medium {
+    background-image: url('../icons/volume-medium.svg');
+}
+
+.video-control--volume-mute {
+    background-image: url('../icons/volume-mute.svg');
+}
+
+.video-controls button + button {
+    margin-left: 8px;
 }
