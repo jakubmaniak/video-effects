@@ -59,9 +59,7 @@ function PresetManager(props) {
         <section className="app-section">
             <header>
                 <h1 className="app-section__title">Presets</h1>
-                <button
-                    onClick={addNewPreset}
-                >Add new preset</button>
+                <button onClick={addNewPreset}>Add new preset</button>
             </header>
             <div className="presets">
                 <PresetList
