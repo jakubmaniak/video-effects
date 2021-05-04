@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 import PresetList from './PresetList';
 import PresetEditor from './PresetEditor';
 
-function PresetManager() {
+function PresetManager(props) {
     let [presets, setPresets] = useState(new Set());
     let [selectedPreset, _setSelectedPreset] = useState();
     let [code, setCode] = useState('');
@@ -13,6 +13,7 @@ function PresetManager() {
         _setSelectedPreset(preset);
         setCode(preset.code);
         setHasChanges(false);
+        setManipulatorCode(preset.code);
     }
 
     useEffect(() => {
@@ -24,7 +25,16 @@ function PresetManager() {
             },    
             {
                 id: uuid(),
-                name: 'Grayscale'
+                name: 'Grayscale',
+                code: `fps(24);
+
+for (let y = 0; y < height; y++) {
+  for (let x = 0; x < width; x++) {
+    let {r, g, b} = get(x, y);
+    let chroma = (r + g + b) / 3;
+    set(x, y, {r: chroma, g: chroma, b: chroma});
+  }
+}`
             }
         ]);
         setPresets(presets);
@@ -48,6 +58,11 @@ function PresetManager() {
         selectedPreset.code = code;
         setPresets(new Set(presets));
         setHasChanges(false);
+        setManipulatorCode(code);
+    }
+
+    function setManipulatorCode(code) {
+        props.onManipulatorChange?.(() => new Function('width', 'height', 'fps', 'get', 'set', code));
     }
 
     return <>

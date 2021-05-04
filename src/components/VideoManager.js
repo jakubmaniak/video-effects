@@ -3,9 +3,10 @@ import { v4 as uuid } from 'uuid';
 import VideoSourceList from './VideoSourceList';
 import VideoPreview from './VideoPreview';
 
-function VideoManager() {
+function VideoManager(props) {
     let [videoSources, setVideoSources] = useState(new Set());
     let [selectedVideoSource, setSelectedVideoSource] = useState();
+    let [manipulator, setManipulator] = useState();
 
     useEffect(() => {
         videoSources = new Set([
@@ -25,6 +26,10 @@ function VideoManager() {
         setSelectedVideoSource(videoSources.values().next().value);
     }, []);
 
+    useEffect(() => {
+        setManipulator(() => props.manipulator);
+    }, [props.manipulator]);
+
     function handleVideoSourceChange(videoSource) {
         if (selectedVideoSource === videoSource) {
             return;
@@ -42,7 +47,8 @@ function VideoManager() {
                 <VideoSourceList
                     videoSources={videoSources}
                     selectedVideoSource={selectedVideoSource}
-                    onSelectVideoSource={handleVideoSourceChange}/>
+                    onSelectVideoSource={handleVideoSourceChange}
+                />
             </div>
         </section>
         <section className="app-section">
@@ -50,7 +56,10 @@ function VideoManager() {
                 <h1 className="app-section__title">Video preview</h1>
             </header>
             <div className="video-preview">
-                <VideoPreview videoSource={selectedVideoSource}/>
+                <VideoPreview
+                    videoSource={selectedVideoSource}
+                    manipulator={manipulator}
+                />
             </div>
         </section>
     </>;
