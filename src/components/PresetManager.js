@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
+import predefinedPresets from '../presets';
+import { name as newPresetName, code as newPresetCode } from '../presets/_new';
 import PresetList from './PresetList';
 import PresetEditor from './PresetEditor';
 
@@ -17,36 +19,24 @@ function PresetManager(props) {
     }
 
     useEffect(() => {
-        presets = new Set([
-            {
-                id: uuid(),
-                name: 'No effects',
-                code: 'fps(24);'
-            },    
-            {
-                id: uuid(),
-                name: 'Grayscale',
-                code: `fps(24);
-
-for (let y = 0; y < height; y++) {
-  for (let x = 0; x < width; x++) {
-    let {r, g, b} = get(x, y);
-    let chroma = (r + g + b) / 3;
-    set(x, y, {r: chroma, g: chroma, b: chroma});
-  }
-}`
-            }
-        ]);
-        setPresets(presets);
-
-        setSelectedPreset(presets.values().next().value);
+        predefinedPresets.then((presetModules) => {
+            presets = new Set(
+                presetModules.map((presetModule) => ({
+                    id: uuid(),
+                    name: presetModule.name,
+                    code: presetModule.code.trim()
+                }))
+            );
+            setPresets(presets);
+            setSelectedPreset(presets.values().next().value);
+        });
     }, []);
 
     function addNewPreset() {
         let newPreset = {
             id: uuid(),
-            name: 'My preset',
-            code: 'fps(24);\n\nfor (let y = 0; y < height; y++) {\n  for (let x = 0; x < width; x++) {\n    let {r, g, b} = get(x, y);\n    set(x, y, {r, g, b});\n    \n  }\n}'
+            name: newPresetName,
+            code: newPresetCode.trim()
         };
         presets.add(newPreset);
 
