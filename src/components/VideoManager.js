@@ -19,6 +19,11 @@ function VideoManager(props) {
                 id: uuid(),
                 name: 'Tears of Steel',
                 source: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4'
+            },
+            {
+                id: uuid(),
+                name: 'Snow Slowly Falling Down',
+                source: '/videos/SnowSlowlyFallingDown.mp4'
             }
         ]);
         setVideoSources(videoSources);
