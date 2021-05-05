@@ -68,8 +68,8 @@ function PresetManager(props) {
                     onSelectPreset={setSelectedPreset}
                 />
             </div>
-            </section>
-            <section className="app-section">
+        </section>
+        <section className="app-section">
             <header>
                 <h1 className="app-section__title">Preset editor</h1>
                 <button

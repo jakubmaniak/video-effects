@@ -1,6 +1,10 @@
 .video-source__list {
     display: flex;
     flex-direction: column;
+    min-height: 165px;
+    height: 270px;
+    max-height: 270px;
+    overflow-y: auto;
 }
 
 .video-source__list .video-source + .video-source {

@@ -1,7 +1,9 @@
 .preset__list {
     display: flex;
     flex-direction: column;
-    height: 300px;
+    min-height: 165px;
+    height: 270px;
+    max-height: 270px;
     overflow-y: auto;
 }
 

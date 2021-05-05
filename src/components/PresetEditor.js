@@ -40,7 +40,7 @@ function PresetEditor(props) {
 
     return (
         <Editor
-            height="400px"
+            height="360px"
             language="javascript"
             onMount={handleEditorMount}
             loading="Loading preset editor..."

@@ -28,6 +28,7 @@ section.app-section {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
+  height: 28px;
 }
 
 .app-section header h1 {
@@ -60,7 +61,18 @@ section.app-section {
 }
 
 @media screen and (max-width: 656px) {
+  .app {
+    padding-top: 0;
+  }
+
   section.app-section {
     margin: 8px 0;
+  }
+}
+
+@media screen and (min-width: 656px) and (max-height: 820px) {
+  .presets .preset__list,
+  .video-sources .video-source__list {
+    height: 165px;
   }
 }
