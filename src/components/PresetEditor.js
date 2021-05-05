@@ -21,12 +21,14 @@ function PresetEditor(props) {
 
     function handleEditorMount(editor, monaco) {
         let lib = [
-            'declare const width: number',
-            'declare const height: number',
-            'declare type Color = { r: number, g: number, b: number, a: number }',
-            'declare function get(x: number, y: number): Color',
-            'declare function set(x: number, y: number, color: Partial<Color> = {}): void'
-        ].join('\n');
+            'declare const width: number;',
+            'declare const height: number;',
+            'declare type Color = { r: number, g: number, b: number, a: number };',
+            'declare function get(x: number, y: number, copy: number = null): Color;',
+            'declare function set(x: number, y: number, color: Partial<Color> = {}, copy: number = null): void;',
+            'declare function copyFrame(): number;',
+            'declare function apply(copy: number = null): void;'
+        ].join('\n\n');
 
         monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
             target: monaco.languages.typescript.ScriptTarget.ES2019,

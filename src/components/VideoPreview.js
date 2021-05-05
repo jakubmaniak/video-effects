@@ -25,28 +25,42 @@ function VideoPreview(props) {
 
         setInterval(() => {
             srcCtx.drawImage(video, 0, 0, 640, 360);
+
             let frame = srcCtx.getImageData(0, 0, 640, 360);
+            let frameCopies = [];
+            let redrawImageData = frame;
+
             let fps = function() { };
-            let get = (x, y) => {
-                let index = (frame.width * y + x) * 4;
+            let copyFrame = () => {
+                let copy = ctx.createImageData(frame.width, frame.height);
+                copy.data.set(new Uint8ClampedArray(frame.data));
+                return frameCopies.push(copy) - 1;
+            };
+            let apply = (copy = null) => {
+                redrawImageData = (copy !== null ? frameCopies[copy] : frame);
+            };
+            let get = (x, y, copy = null) => {
+                let img = (copy !== null ? frameCopies[copy] : frame);
+                let index = (img.width * y + x) * 4;
                 return {
-                    r: frame.data[index],
-                    g: frame.data[index + 1],
-                    b: frame.data[index + 2],
-                    a: frame.data[index + 3]
+                    r: img.data[index],
+                    g: img.data[index + 1],
+                    b: img.data[index + 2],
+                    a: img.data[index + 3]
                 };
             };
-            let set = (x, y, { r = null, g = null, b = null, a = null }) => {
-                let index = (frame.width * y + x) * 4;
-                (r != null) && (frame.data[index] = r);
-                (g != null) && (frame.data[index + 1] = g);
-                (b != null) && (frame.data[index + 2] = b);
-                (a != null) && (frame.data[index + 3] = a);
+            let set = (x, y, { r = null, g = null, b = null, a = null }, copy = null) => {
+                let img = (copy !== null ? frameCopies[copy] : frame);
+                let index = (img.width * y + x) * 4;
+                (r != null) && (img.data[index] = r);
+                (g != null) && (img.data[index + 1] = g);
+                (b != null) && (img.data[index + 2] = b);
+                (a != null) && (img.data[index + 3] = a);
             };
             
-            manipulatorRef.current?.(frame.width, frame.height, fps, get, set);
-            
-            ctx.putImageData(frame, 0, 0);
+            manipulatorRef.current?.(frame.width, frame.height, fps, get, set, copyFrame, apply);
+
+            ctx.putImageData(redrawImageData, 0, 0);
         }, 1000 / 24);
     }, []);
 

@@ -52,7 +52,7 @@ function PresetManager(props) {
     }
 
     function setManipulatorCode(code) {
-        props.onManipulatorChange?.(() => new Function('width', 'height', 'fps', 'get', 'set', code));
+        props.onManipulatorChange?.(() => new Function('width', 'height', 'fps', 'get', 'set', 'copyFrame', 'apply', code));
     }
 
     return <>
