@@ -9,6 +9,12 @@ function PresetList(props) {
         listRef.current.scrollTop = listRef.current.scrollHeight;
     }, [props.presets]);
 
+    function handleItemClick(preset) {
+        if (preset !== props.selectedPreset) {
+            props.onSelectPreset?.(preset);
+        }
+    }
+
     return (
         <div className="preset__list" ref={listRef}>{
             [...props.presets].map((preset) =>
@@ -16,7 +22,7 @@ function PresetList(props) {
                     key={preset.id}
                     name={preset.name}
                     selected={preset === props.selectedPreset}
-                    onClick={() => props.onSelectPreset?.(preset)}
+                    onClick={() => handleItemClick(preset)}
                 />
             )
         }</div>
