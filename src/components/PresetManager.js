@@ -14,8 +14,8 @@ function PresetManager(props) {
     function setSelectedPreset(preset) {
         _setSelectedPreset(preset);
         setCode(preset.code);
-        setHasChanges(false);
         setManipulatorCode(preset.code);
+        setHasChanges(false);
     }
 
     useEffect(() => {
@@ -47,8 +47,8 @@ function PresetManager(props) {
     function saveCodeChanges() {
         selectedPreset.code = code;
         setPresets(new Set(presets));
-        setHasChanges(false);
         setManipulatorCode(code);
+        setHasChanges(false);
     }
 
     function setManipulatorCode(code) {
@@ -79,7 +79,7 @@ function PresetManager(props) {
             </header>
             <div className="preset-editor">
                 <PresetEditor
-                    code={code}
+                    preset={selectedPreset}
                     onCodeChange={(code) => { setCode(code); setHasChanges(true); }}
                 />
             </div>

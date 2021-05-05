@@ -5,12 +5,7 @@
     box-shadow: 0 4px 8px rgba(0,0,255,0.04);
 }
 
-textarea.preset-editor__code {
-    display: block;
-    padding: 8px;
-    width: 100%;
-    min-height: 200px;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 14px;
-    resize: vertical;
-  }
+.monaco-editor,
+.monaco-editor .overflow-guard {
+    border-radius: 4px;
+}
