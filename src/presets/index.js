@@ -4,5 +4,6 @@ export default Promise.all([
     import('./sepia'),
     import('./infrared-vision'),
     import('./noctovision'),
+    import('./binoculars'),
     import('./red-turquoise')
 ]);
