@@ -1,0 +1,1 @@
+{"version":3,"sources":["presets/_default.js"],"names":["name","code"],"mappings":"qHAAA,iFAAO,IAAMA,EAAO,aACPC,EAAI","file":"static/js/3.329b9a9d.chunk.js","sourcesContent":["export const name = 'No effects';\r\nexport const code = ``;"],"sourceRoot":""}

@@ -1,0 +1,2 @@
+(this["webpackJsonpvideo-effects"]=this["webpackJsonpvideo-effects"]||[]).push([[10],{31:function(n,e,t){"use strict";t.r(e),t.d(e,"name",(function(){return r})),t.d(e,"code",(function(){return o}));var r="Sepia",o="\nfor (let y = 0; y < height; y++) {\n    for (let x = 0; x < width; x++) {\n        let {r, g, b} = get(x, y);\n        let chroma = (r + g + b) / 3;\n        set(x, y, {\n            r: chroma,\n            g: chroma / 1.2,\n            b: chroma / 1.7\n        });\n    }\n}\n"}}]);
+//# sourceMappingURL=10.04814915.chunk.js.map

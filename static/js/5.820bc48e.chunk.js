@@ -1,0 +1,2 @@
+(this["webpackJsonpvideo-effects"]=this["webpackJsonpvideo-effects"]||[]).push([[5],{32:function(n,e,t){"use strict";t.r(e),t.d(e,"name",(function(){return i})),t.d(e,"code",(function(){return o}));var i="Daylight",o="\nfor (let y = 0; y < height; y++) {\n    for (let x = 0; x < width; x++) {\n        let {g, b} = get(x, y);\n        \n        set(x, y, {\n            g: g * 1.08,\n            b: b * 1.20\n        });\n    }\n}\n"}}]);
+//# sourceMappingURL=5.820bc48e.chunk.js.map

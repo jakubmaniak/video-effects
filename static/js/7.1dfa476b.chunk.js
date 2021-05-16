@@ -1,0 +1,2 @@
+(this["webpackJsonpvideo-effects"]=this["webpackJsonpvideo-effects"]||[]).push([[7],{33:function(n,e,t){"use strict";t.r(e),t.d(e,"name",(function(){return r})),t.d(e,"code",(function(){return o}));var r="Infrared vision",o="\nfor (let y = 0; y < height; y++) {\n    for (let x = 0; x < width; x++) {\n        let {r, g, b} = get(x, y);\n        let chroma = (r + g + b) / 3;\n        set(x, y, {\n            r: chroma * 1.5,\n            g: chroma / 2,\n            b: 255 - chroma\n        });\n    }\n}\n"}}]);
+//# sourceMappingURL=7.1dfa476b.chunk.js.map

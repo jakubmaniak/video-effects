@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/video-effects/static/css/main.74f92092.chunk.css",
+    "main.js": "/video-effects/static/js/main.e433b734.chunk.js",
+    "main.js.map": "/video-effects/static/js/main.e433b734.chunk.js.map",
+    "runtime-main.js": "/video-effects/static/js/runtime-main.5e8ead44.js",
+    "runtime-main.js.map": "/video-effects/static/js/runtime-main.5e8ead44.js.map",
+    "static/js/2.998cd4b2.chunk.js": "/video-effects/static/js/2.998cd4b2.chunk.js",
+    "static/js/2.998cd4b2.chunk.js.map": "/video-effects/static/js/2.998cd4b2.chunk.js.map",
+    "static/js/3.329b9a9d.chunk.js": "/video-effects/static/js/3.329b9a9d.chunk.js",
+    "static/js/3.329b9a9d.chunk.js.map": "/video-effects/static/js/3.329b9a9d.chunk.js.map",
+    "static/js/4.52659238.chunk.js": "/video-effects/static/js/4.52659238.chunk.js",
+    "static/js/4.52659238.chunk.js.map": "/video-effects/static/js/4.52659238.chunk.js.map",
+    "static/js/5.820bc48e.chunk.js": "/video-effects/static/js/5.820bc48e.chunk.js",
+    "static/js/5.820bc48e.chunk.js.map": "/video-effects/static/js/5.820bc48e.chunk.js.map",
+    "static/js/6.499ba7a9.chunk.js": "/video-effects/static/js/6.499ba7a9.chunk.js",
+    "static/js/6.499ba7a9.chunk.js.map": "/video-effects/static/js/6.499ba7a9.chunk.js.map",
+    "static/js/7.1dfa476b.chunk.js": "/video-effects/static/js/7.1dfa476b.chunk.js",
+    "static/js/7.1dfa476b.chunk.js.map": "/video-effects/static/js/7.1dfa476b.chunk.js.map",
+    "static/js/8.2a32f0f5.chunk.js": "/video-effects/static/js/8.2a32f0f5.chunk.js",
+    "static/js/8.2a32f0f5.chunk.js.map": "/video-effects/static/js/8.2a32f0f5.chunk.js.map",
+    "static/js/9.4576a43e.chunk.js": "/video-effects/static/js/9.4576a43e.chunk.js",
+    "static/js/9.4576a43e.chunk.js.map": "/video-effects/static/js/9.4576a43e.chunk.js.map",
+    "static/js/10.04814915.chunk.js": "/video-effects/static/js/10.04814915.chunk.js",
+    "static/js/10.04814915.chunk.js.map": "/video-effects/static/js/10.04814915.chunk.js.map",
+    "static/js/11.0fcf923c.chunk.js": "/video-effects/static/js/11.0fcf923c.chunk.js",
+    "static/js/11.0fcf923c.chunk.js.map": "/video-effects/static/js/11.0fcf923c.chunk.js.map",
+    "index.html": "/video-effects/index.html",
+    "static/css/main.74f92092.chunk.css.map": "/video-effects/static/css/main.74f92092.chunk.css.map",
+    "static/js/2.998cd4b2.chunk.js.LICENSE.txt": "/video-effects/static/js/2.998cd4b2.chunk.js.LICENSE.txt",
+    "static/media/VideoPreview.css": "/video-effects/static/media/volume-mute.08452378.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5e8ead44.js",
+    "static/js/2.998cd4b2.chunk.js",
+    "static/css/main.74f92092.chunk.css",
+    "static/js/main.e433b734.chunk.js"
+  ]
+}
